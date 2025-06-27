@@ -1,6 +1,6 @@
-import { createFileRoute, useLoaderData } from "@tanstack/react-router";
+import { createFileRoute, useLoaderData } from '@tanstack/react-router';
 
-export const Route = createFileRoute("/posts/$id")({
+export const Route = createFileRoute('/posts/$id')({
   component: PostByIdComponent,
   loader: async ({ params }) => {
     const id = params.id;
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/posts/$id")({
 });
 
 function PostByIdComponent() {
-  const { data } = useLoaderData({ from: "/posts/$id" });
+  const { data } = useLoaderData({ from: '/posts/$id' });
   return (
     <div>
       post Id

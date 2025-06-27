@@ -1,6 +1,6 @@
-import { createLazyFileRoute, useNavigate } from "@tanstack/react-router";
+import { createLazyFileRoute, useNavigate } from '@tanstack/react-router';
 
-export const Route = createLazyFileRoute("/contact")({
+export const Route = createLazyFileRoute('/contact')({
   component: ContactComponent,
 });
 
@@ -10,7 +10,7 @@ function ContactComponent() {
     <div>
       Contact Page
       <br />
-      <button onClick={() => navigate({ to: "/about" })}>
+      <button onClick={() => navigate({ to: '/about' })}>
         Navigate to Contact page
       </button>
     </div>
