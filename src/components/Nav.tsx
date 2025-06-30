@@ -1,17 +1,18 @@
-import { Box, Flex } from '@radix-ui/themes';
-import { Link } from '@tanstack/react-router';
+import { Box, Button, Flex } from '@radix-ui/themes';
+import { Link, useNavigate } from '@tanstack/react-router';
 
 const Nav = () => {
+  const navigate = useNavigate();
   return (
     <Flex gap="4" justify="center" p="3">
       <Box>
-        <Link to="/">Home</Link>
+        <Button onClick={() => navigate({ to: '/' })}>Home</Button>
       </Box>
       <Box>
-        <Link to="/about">About</Link>
+        <Button onClick={() => navigate({ to: '/about' })}>About</Button>
       </Box>
       <Box>
-        <Link to="/contact">Contact</Link>
+        <Button onClick={() => navigate({ to: '/contact' })}>Contact</Button>
       </Box>
     </Flex>
   );

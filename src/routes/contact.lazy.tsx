@@ -8,7 +8,7 @@ export const Route = createLazyFileRoute('/contact')({
 function ContactComponent() {
   const navigate = useNavigate();
   return (
-    <Flex justify="center" align="center" height="80vh">
+    <Flex justify="center" align="center" height="85vh">
       <Box>
         <Flex direction="column" align="center" gap="2">
           <Heading size="8">Contacts Page</Heading>
