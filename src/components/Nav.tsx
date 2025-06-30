@@ -1,5 +1,5 @@
 import { Box, Button, Flex } from '@radix-ui/themes';
-import { Link, useNavigate } from '@tanstack/react-router';
+import { useNavigate } from '@tanstack/react-router';
 
 const Nav = () => {
   const navigate = useNavigate();
