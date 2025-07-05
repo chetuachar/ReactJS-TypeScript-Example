@@ -1,3 +1,4 @@
+import { Card, Flex, Text } from '@radix-ui/themes';
 import { createFileRoute, useLoaderData } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/posts/$id')({
@@ -13,17 +14,30 @@ export const Route = createFileRoute('/posts/$id')({
     const data = await response.json();
     return { data };
   },
-  pendingComponent: () => <>Loading....!</>,
+  pendingComponent: () => (
+    <>
+      <Flex justify="center" height="85vh" align="center">
+        <Text as="div" size="2" weight="bold">
+          Loading...
+        </Text>
+      </Flex>
+    </>
+  ),
   errorComponent: () => <>Error while loading...!</>,
 });
 
 function PostByIdComponent() {
   const { data } = useLoaderData({ from: '/posts/$id' });
   return (
-    <div>
-      post Id
-      <h1>{data.title}</h1>
-      <p>{data.body}</p>
-    </div>
+    <Flex justify="center" height="85vh" align="center">
+      <Card variant="surface" style={{ padding: '20px', width: '400px' }}>
+        <Text as="div" size="6" weight="bold">
+          {data.title}
+        </Text>
+        <Text as="div" color="gray" size="4">
+          {data.body}
+        </Text>
+      </Card>
+    </Flex>
   );
 }
